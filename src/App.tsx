@@ -1,7 +1,7 @@
-import { ColorSchemeProvider, MantineProvider, Paper, ColorScheme } from "@mantine/core";
-import { useLocalStorageValue, useHotkeys } from "@mantine/hooks";
-import Header  from "./components/Header";
-import Cards from "./components/Cards";
+import { ColorSchemeProvider, MantineProvider, ColorScheme } from '@mantine/core';
+import { useLocalStorageValue, useHotkeys } from '@mantine/hooks';
+import Layout from './components/Layout';
+import './App.css';
 
 const App: React.FC = () => {
     const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
@@ -14,10 +14,7 @@ const App: React.FC = () => {
     return (
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
             <MantineProvider theme={{ colorScheme }}>
-                <Paper padding='md' radius={0} style={{ minHeight: '100vh' }}>
-                    <Header colorScheme={colorScheme} />
-                    <Cards />
-                </Paper>
+                <Layout colorScheme={colorScheme} />
             </MantineProvider>
         </ColorSchemeProvider>
     );

@@ -6,10 +6,10 @@ const ThemeSwitch: React.FC = () => {
     const dark = colorScheme === 'dark';
     return (
         <ActionIcon
-            variant="outline"
+            variant='outline'
             color={dark ? 'yellow' : 'blue'}
             onClick={() => toggleColorScheme()}
-            title="Toggle color scheme"
+            title='Toggle color scheme'
         >
             {dark ? (
                 <SunIcon style={{ width: 18, height: 18 }} />

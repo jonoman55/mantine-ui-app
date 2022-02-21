@@ -6,7 +6,7 @@ interface Props {
 };
 
 const Header: React.FC<Props> = ({ colorScheme }) => (
-    <Box sx={{ width: '100%', height: '100px', display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'flex-start' }}>
+    <Box sx={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'row', alignItems: 'flex-start', justifyContent: 'flex-start' }}>
         <ThemeSwitch />
         <Text style={{ paddingLeft: 8 }}>
             {colorScheme === 'dark' ? 'Dark Mode' : 'Light Mode'}

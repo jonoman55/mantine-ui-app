@@ -1,9 +1,11 @@
 /* eslint-disable no-useless-escape */
+// eslint-disable-next-line
 import { ActionIcon, Box, Code, Group, useMantineTheme } from '@mantine/core';
 import { Prism } from '@mantine/prism';
 import { SiTypescript, SiPython, SiCss3 } from 'react-icons/si';
 import { IconWrapper } from './Wrappers';
 
+// eslint-disable-next-line
 const codeForPreviousDemo = 
 `import React from 'react';
 import { Code } from '@mantine/core';
@@ -51,11 +53,11 @@ class SomeClass:
 ... prompt'''
 `;
 
-const Codes = () => {
+const CodeDemo = () => {
     const theme = useMantineTheme();
     return (
         <>
-            <Box m='md'>
+            {/* <Box m='md'>
                 <Code block>{codeForPreviousDemo}</Code>
             </Box>
             <Group direction='column' m='lg'>
@@ -66,8 +68,8 @@ const Codes = () => {
             <Group m='md'>
                 <Prism language='tsx'>{demoCode}</Prism>
                 <Prism language='tsx' withLineNumbers>{demoCode}</Prism>
-            </Group>
-            <Box m='lg'>
+            </Group> */}
+            <Box m='lg' id='code'>
                 <Prism.Tabs>
                     <Prism.Tab withLineNumbers label="styles.css" language="css" icon={
                         <ActionIcon size='sm' radius='sm' variant='transparent' style={{ color: theme.colors.red[7] }}>
@@ -96,4 +98,4 @@ const Codes = () => {
     );
 };
 
-export default Codes;
+export default CodeDemo;

@@ -1,9 +1,9 @@
 import { useMantineTheme, Grid, Card, Image, Group, Text, Badge, Button } from '@mantine/core';
 
-const Cards: React.FC = () => {
+const CardsDemo: React.FC = () => {
     const theme = useMantineTheme();
     return (
-        <Grid justify='space-around' style={{ margin: '1rem' }}>
+        <Grid justify='space-around' style={{ margin: '1rem' }} id='cards'>
             <Grid.Col style={{ maxWidth: 350 }} sm={4} xs={4}>
                 <Card shadow='sm' padding='lg' style={{ boxShadow: '0px 10px 15px 0px hsla(0, 0%, 0%, 0.20)' }}>
                     <Card.Section>
@@ -65,4 +65,4 @@ const Cards: React.FC = () => {
     );
 };
 
-export default Cards;
+export default CardsDemo;

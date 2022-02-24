@@ -1,8 +1,8 @@
 import { Paper, Box } from '@mantine/core';
 import Header from './Header';
-import Cards from './Cards';
-import Buttons from './Buttons';
-import Codes from './Codes';
+import Cards from './CardsDemo';
+import Buttons from './ButtonsDemo';
+import Codes from './CodeDemo';
 import { SectionWrapper } from './Wrappers';
 
 interface Props {

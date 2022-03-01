@@ -5,6 +5,7 @@ import Cards from './CardsDemo';
 import Codes from './CodeDemo';
 import Table from './TableDemo';
 import Buttons from './ButtonsDemo';
+import Chips from './ChipsDemo';
 
 function AppShellDemo() {
     const theme = useMantineTheme();
@@ -68,6 +69,8 @@ function AppShellDemo() {
             <Codes />
             <Divider my='lg' />
             <Table />
+            <Divider my='lg' />
+            <Chips />
         </AppShell>
     );
 };

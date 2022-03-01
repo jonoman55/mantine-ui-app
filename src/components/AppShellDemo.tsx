@@ -7,6 +7,7 @@ import Table from './TableDemo';
 import Buttons from './ButtonsDemo';
 import Chips from './ChipsDemo';
 
+// TODO : Add IDs to Header and Footer for page nav
 // TODO : Implement either the use-window-scroll or use-scroll-into-view hooks for page nav
 // https://mantine.dev/hooks/use-window-scroll/ 
 // https://mantine.dev/hooks/use-scroll-into-view/ 

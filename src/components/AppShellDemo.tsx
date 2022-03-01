@@ -7,6 +7,9 @@ import Table from './TableDemo';
 import Buttons from './ButtonsDemo';
 import Chips from './ChipsDemo';
 
+// TODO : Implement either the use-window-scroll or use-scroll-into-view hooks for page nav
+// https://mantine.dev/hooks/use-window-scroll/ 
+// https://mantine.dev/hooks/use-scroll-into-view/ 
 function AppShellDemo() {
     const theme = useMantineTheme();
     const [opened, setOpened] = useState(false);
@@ -36,6 +39,7 @@ function AppShellDemo() {
                         <Text component='a' href='#buttons' target='_self'>Buttons</Text>
                         <Text component='a' href='#code' target='_self'>Code</Text>
                         <Text component='a' href='#table' target='_self'>Table</Text>
+                        <Text component='a' href='#chips' target='_self'>Chips</Text>
                     </Navbar.Section>
                     <Navbar.Section>
                         <Text>Footer</Text>

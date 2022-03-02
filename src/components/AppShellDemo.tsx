@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { AppShell, Burger, Divider, Header, MediaQuery, Navbar, Text, useMantineTheme } from '@mantine/core';
+
 import ThemeSwitch from './ThemeSwitch';
 import Cards from './CardsDemo';
 import Codes from './CodeDemo';
 import Table from './TableDemo';
 import Buttons from './ButtonsDemo';
 import Chips from './ChipsDemo';
+import TextAndTitle from './TextTitleDemo';
 
 // TODO : Add IDs to Header and Footer for page nav
 // TODO : Implement either the use-window-scroll or use-scroll-into-view hooks for page nav
@@ -41,9 +43,10 @@ function AppShellDemo() {
                         <Text component='a' href='#code' target='_self'>Code</Text>
                         <Text component='a' href='#table' target='_self'>Table</Text>
                         <Text component='a' href='#chips' target='_self'>Chips</Text>
+                        <Text component='a' href='#texts' target='_self'>Text & Title</Text>
                     </Navbar.Section>
                     <Navbar.Section>
-                        <Text>Footer</Text>
+                        <Text id="footer">Footer</Text>
                     </Navbar.Section>
                 </Navbar>
             }
@@ -60,7 +63,7 @@ function AppShellDemo() {
                                 mr='xl'
                             />
                         </MediaQuery>
-                        <Text>Header</Text>
+                        <Text id="header">Header</Text>
                         <ThemeSwitch />
                     </div>
                 </Header>
@@ -76,6 +79,8 @@ function AppShellDemo() {
             <Table />
             <Divider my='lg' />
             <Chips />
+            <Divider my='lg' />
+            <TextAndTitle />
         </AppShell>
     );
 };

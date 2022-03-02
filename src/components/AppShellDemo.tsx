@@ -13,7 +13,7 @@ import TextAndTitle from './TextTitleDemo';
 // TODO : Implement either the use-window-scroll or use-scroll-into-view hooks for page nav
 // https://mantine.dev/hooks/use-window-scroll/ 
 // https://mantine.dev/hooks/use-scroll-into-view/ 
-function AppShellDemo() {
+const AppShellDemo: React.FC = () => {
     const theme = useMantineTheme();
     const [opened, setOpened] = useState(false);
     return (

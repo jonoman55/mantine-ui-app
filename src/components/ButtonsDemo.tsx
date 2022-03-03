@@ -12,7 +12,7 @@ const ButtonsDemo: React.FC = () => {
     };
 
     return (
-        <Box style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center' }} id='buttons'>
+        <Box style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center', margin: '1rem', gap: 12 }}>
             <Button variant='gradient' gradient={{ from: 'indigo', to: 'cyan' }} leftIcon={<StarIcon />} onClick={handleClick} loading={loading} style={{ width: 141 }}>
                 {!loading ? 'Not Loading' : 'Loading'}
             </Button>
@@ -25,7 +25,7 @@ const ButtonsDemo: React.FC = () => {
                 target='_blank'
                 leftIcon={<GitHubLogoIcon />}
                 variant='gradient'
-                gradient={{ from: 'black', to: 'gray', deg: 40 }}
+                gradient={{ from: 'dark', to: 'gray', deg: 138 }}
             >
                 GitHub
             </Button>

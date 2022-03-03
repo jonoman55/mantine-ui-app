@@ -11,7 +11,7 @@ const ChipsDemo: React.FC = () => {
     }, [value]);
     
     return (
-        <Chips value={value} onChange={setValue} multiple color="red" variant="filled" spacing="lg" size="xl" radius="lg" id="chips">
+        <Chips value={value} onChange={setValue} multiple color="red" variant="filled" spacing="lg" size="xl" radius="lg">
             <Chip value="react">React</Chip>
             <Chip value="ng">Angular</Chip>
             <Chip value="svelte">Svelte</Chip>

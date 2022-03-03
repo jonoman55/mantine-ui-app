@@ -1,11 +1,9 @@
 /* eslint-disable no-useless-escape */
-// eslint-disable-next-line
 import { ActionIcon, Box, Code, Group, useMantineTheme } from '@mantine/core';
 import { Prism } from '@mantine/prism';
 import { SiTypescript, SiPython, SiCss3 } from 'react-icons/si';
 import { IconWrapper } from './Wrappers';
 
-// eslint-disable-next-line
 const codeForPreviousDemo = 
 `import React from 'react';
 import { Code } from '@mantine/core';
@@ -57,19 +55,7 @@ const CodeDemo = () => {
     const theme = useMantineTheme();
     return (
         <>
-            {/* <Box m='md'>
-                <Code block>{codeForPreviousDemo}</Code>
-            </Box>
-            <Group direction='column' m='lg'>
-                <Code color='red'>React.createElement()</Code>
-                <Code color='teal'>React.createElement()</Code>
-                <Code color='blue'>React.createElement()</Code>
-            </Group>
-            <Group m='md'>
-                <Prism language='tsx'>{demoCode}</Prism>
-                <Prism language='tsx' withLineNumbers>{demoCode}</Prism>
-            </Group> */}
-            <Box m='lg' id='code'>
+            <Box m='lg'>
                 <Prism.Tabs>
                     <Prism.Tab withLineNumbers label="styles.css" language="css" icon={
                         <ActionIcon size='sm' radius='sm' variant='transparent' style={{ color: theme.colors.red[7] }}>
@@ -97,5 +83,23 @@ const CodeDemo = () => {
         </>
     );
 };
+
+// eslint-disable-next-line
+const CodeExample = () => (
+    <div>
+        <Box m='md'>
+            <Code block>{codeForPreviousDemo}</Code>
+        </Box>
+        <Group direction='column' m='lg'>
+            <Code color='red'>React.createElement()</Code>
+            <Code color='teal'>React.createElement()</Code>
+            <Code color='blue'>React.createElement()</Code>
+        </Group>
+        <Group m='md'>
+            <Prism language='tsx'>{demoCode}</Prism>
+            <Prism language='tsx' withLineNumbers>{demoCode}</Prism>
+        </Group>
+    </div>
+);
 
 export default CodeDemo;

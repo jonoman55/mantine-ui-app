@@ -19,7 +19,7 @@ function TableDemo() {
     ));
 
     return (
-        <Table id='table'>
+        <Table>
             <thead>
                 <tr>
                     <th>Element position</th>

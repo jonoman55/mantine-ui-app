@@ -1,10 +1,9 @@
-import { ColorSchemeProvider, MantineProvider, ColorScheme, Paper } from '@mantine/core';
+import { ColorSchemeProvider, MantineProvider, ColorScheme } from '@mantine/core';
 import { NotificationsProvider } from '@mantine/notifications';
 import { ModalsProvider } from '@mantine/modals';
 import { useLocalStorageValue, useHotkeys } from '@mantine/hooks';
 
-import AppShellDemo from './components/AppShellDemo';
-import './App.css';
+import { Layout } from './components';
 
 const App: React.FC = () => {
     const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
@@ -18,12 +17,10 @@ const App: React.FC = () => {
         <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
             <MantineProvider theme={{ colorScheme }}>
                 <NotificationsProvider autoClose={3000} limit={5}>
-                <ModalsProvider>
-                    <Paper style={{ borderRadius: 0 }}>
-                        <AppShellDemo />
-                    </Paper>
+                    <ModalsProvider>
+                        <Layout />
                     </ModalsProvider>
-                    </NotificationsProvider>
+                </NotificationsProvider>
             </MantineProvider>
         </ColorSchemeProvider >
     );

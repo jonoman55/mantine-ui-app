@@ -1,36 +1,10 @@
-import { Paper, Box } from '@mantine/core';
-import Header from './Header';
-import Cards from './CardsDemo';
-import Buttons from './ButtonsDemo';
-import Codes from './CodeDemo';
-import { SectionWrapper } from './Wrappers';
+import { Paper } from '@mantine/core';
 
-interface Props {
-    colorScheme: string;
-};
+import App from './AppContent';
 
-const Layout: React.FC<Props> = ({ colorScheme }) => (
-    <Paper className='app' padding='lg' radius={0}>
-        <Box className='app__header' mb='sm'>
-            <Header colorScheme={colorScheme} />
-        </Box>
-        <Box className='app__container'>
-            <SectionWrapper title='Cards Demo'>
-                <Box className='app__flex' m='sm'>
-                    <Cards />
-                </Box>
-            </SectionWrapper>
-            <SectionWrapper title='Buttons Demo'>
-                <Box className='app__flex' m='sm'>
-                    <Buttons />
-                </Box>
-            </SectionWrapper>
-            <SectionWrapper title='Code Demo'>
-                <Box className='app__flex' m='sm' style={{ flexDirection: 'column' }}>
-                    <Codes />
-                </Box>
-            </SectionWrapper>
-        </Box>
+const Layout: React.FC = () => (
+    <Paper style={{ borderRadius: 0 }}>
+        <App />
     </Paper>
 );
 

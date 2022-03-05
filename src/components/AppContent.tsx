@@ -1,23 +1,14 @@
 import { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { useMantineTheme, AppShell, Burger, Divider, Header, MediaQuery, Navbar, Text, Button } from '@mantine/core';
-import { GitHubLogoIcon } from '@modulz/radix-icons';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { useMantineTheme, AppShell, Burger, Header, MediaQuery, Navbar, Text, Box } from '@mantine/core';
 
+import NavLink from './NavLink';
 import ThemeSwitch from './ThemeSwitch';
-import Cards from './CardsDemo';
-import Codes from './CodeDemo';
-import Table from './TableDemo';
-import Buttons from './ButtonsDemo';
-import Chips from './ChipsDemo';
-import TextAndTitle from './TextTitleDemo';
-import Alerts from './AlertsDemo';
-import Modals from './ModalsDemo';
+import GitHubButton from './GitHubButton';
+import MantineLink from './MantineLink';
+import { All, Cards, Codes, Table, Buttons, Chips, TextAndTitle, Alerts, Modals } from './demos';
 
-// TODO : Add IDs to Header and Footer for page nav
-// TODO : Implement either the use-window-scroll or use-scroll-into-view hooks for page nav
-// https://mantine.dev/hooks/use-window-scroll/ 
-// https://mantine.dev/hooks/use-scroll-into-view/ 
-const AppShellDemo: React.FC = () => {
+const AppContent: React.FC = () => {
     const theme = useMantineTheme();
     const [opened, setOpened] = useState(false);
     return (
@@ -49,7 +40,7 @@ const AppShellDemo: React.FC = () => {
                             <NavLink text='Code' to='/code' />
                             <NavLink text='Table' to='/table' />
                             <NavLink text='Chips' to='/chips' />
-                            <NavLink text='Text'to='/text' />
+                            <NavLink text='Text' to='/text' />
                             <NavLink text='Alerts' to='/alerts' />
                             <NavLink text='Modals' to='/modals' />
                         </Navbar.Section>
@@ -61,7 +52,7 @@ const AppShellDemo: React.FC = () => {
                 header={
                     <Header height={70} padding='md'>
                         {/* Handle other responsive styles with MediaQuery component or createStyles function */}
-                        <div style={{ display: 'flex', alignItems: 'center', height: '100%', justifyContent: 'space-between' }}>
+                        <Box style={{ display: 'flex', alignItems: 'center', height: '100%', justifyContent: 'space-between' }}>
                             <MediaQuery largerThan='sm' styles={{ display: 'none' }}>
                                 <Burger
                                     opened={opened}
@@ -71,15 +62,15 @@ const AppShellDemo: React.FC = () => {
                                     mr='xl'
                                 />
                             </MediaQuery>
-                            <Text component={Link} to='/' style={{ fontWeight: 700, fontSize: 24 }}>Mantine UI</Text>
+                             <MantineLink />
                             <ThemeSwitch />
-                        </div>
+                        </Box>
                     </Header>
                 }
             >
                 {/* AppShell content */}
                 <Routes>
-                    <Route path='/' element={<HomePage />} />
+                    <Route path='/' element={<All />} />
                     <Route path='/cards' element={<Cards />} />
                     <Route path='/buttons' element={<Buttons />} />
                     <Route path='/code' element={<Codes />} />
@@ -94,48 +85,4 @@ const AppShellDemo: React.FC = () => {
     );
 };
 
-interface NavLinkProps {
-    text: string;
-    to: string;
-};
-
-const NavLink = ({ text, to }: NavLinkProps) => (
-    <Text component={Link} variant='link' to={to} color='cyan'>
-        {text}
-    </Text>
-);
-
-const HomePage: React.FC = () => (
-    <div>
-        <Cards />
-        <Divider my='lg' />
-        <Buttons />
-        <Divider my='lg' />
-        <Codes />
-        <Divider my='lg' />
-        <Table />
-        <Divider my='lg' />
-        <Chips />
-        <Divider my='lg' />
-        <TextAndTitle />
-        <Divider my='lg' />
-        <Alerts />
-        <Divider my='lg' />
-        <Modals />
-    </div>
-);
-
-const GitHubButton: React.FC = () => (
-    <Button
-        component='a'
-        href='https://github.com/https://github.com/jonoman55/mantine-ui-app'
-        target='_blank'
-        leftIcon={<GitHubLogoIcon />}
-        variant='gradient'
-        gradient={{ from: 'dark', to: 'gray', deg: 138 }}
-    >
-        GitHub
-    </Button>
-);
-
-export default AppShellDemo;
+export default AppContent;

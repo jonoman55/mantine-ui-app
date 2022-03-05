@@ -62,7 +62,7 @@ const AppContent: React.FC = () => {
                                     mr='xl'
                                 />
                             </MediaQuery>
-                             <MantineLink />
+                            <MantineLink />
                             <ThemeSwitch />
                         </Box>
                     </Header>

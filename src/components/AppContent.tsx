@@ -8,6 +8,8 @@ import GitHubButton from './GitHubButton';
 import MantineLink from './MantineLink';
 import { All, Cards, Codes, Table, Buttons, Chips, TextAndTitle, Alerts, Modals } from './demos';
 
+// TODO : Add functionality to close the navbar after clicking an item when in mobile
+// TODO : Add state management for easier control over the props
 const AppContent: React.FC = () => {
     const theme = useMantineTheme();
     const [opened, setOpened] = useState(false);

@@ -43,6 +43,7 @@ class SomeClass:
 ... prompt'''
 `;
 
+// TODO : Figure out how to fix the mobile styling for this component
 const CodeDemo = () => {
     const theme = useMantineTheme();
     return (

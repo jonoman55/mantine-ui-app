@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { useMantineTheme, AppShell, Burger, Divider, Header, MediaQuery, Navbar, Text, Button } from '@mantine/core';
+import { GitHubLogoIcon } from '@modulz/radix-icons';
 
 import ThemeSwitch from './ThemeSwitch';
 import Cards from './CardsDemo';
@@ -9,7 +10,8 @@ import Table from './TableDemo';
 import Buttons from './ButtonsDemo';
 import Chips from './ChipsDemo';
 import TextAndTitle from './TextTitleDemo';
-import { GitHubLogoIcon } from '@modulz/radix-icons';
+import Alerts from './AlertsDemo';
+import Modals from './ModalsDemo';
 
 // TODO : Add IDs to Header and Footer for page nav
 // TODO : Implement either the use-window-scroll or use-scroll-into-view hooks for page nav
@@ -41,31 +43,18 @@ const AppShellDemo: React.FC = () => {
                             <Text>Navbar</Text>
                         </Navbar.Section>
                         <Navbar.Section grow mt='lg' style={{ display: 'flex', flexDirection: 'column' }}>
-                            <Text component={Link} variant='link' to='/' color='cyan'>
-                                Home
-                            </Text>
-                            <Text component={Link} variant='link' to='/cards' color='cyan'>
-                                Cards
-                            </Text>
-                            <Text component={Link} variant='link' to='/buttons' color='cyan'>
-                                Buttons
-                            </Text>
-                            <Text component={Link} variant='link' to='/code' color='cyan'>
-                                Code
-                            </Text>
-                            <Text component={Link} variant='link' to='/table' color='cyan'>
-                                Table
-                            </Text>
-                            <Text component={Link} variant='link' to='/chips' color='cyan'>
-                                Chips
-                            </Text>
-                            <Text component={Link} variant='link' to='/text' color='cyan'>
-                                Text & Title
-                            </Text>
+                            <NavLink text='All' to='/' />
+                            <NavLink text='Cards' to='/cards' />
+                            <NavLink text='Buttons' to='/buttons' />
+                            <NavLink text='Code' to='/code' />
+                            <NavLink text='Table' to='/table' />
+                            <NavLink text='Chips' to='/chips' />
+                            <NavLink text='Text'to='/text' />
+                            <NavLink text='Alerts' to='/alerts' />
+                            <NavLink text='Modals' to='/modals' />
                         </Navbar.Section>
                         <Navbar.Section>
                             <GitHubButton />
-                            {/* <Text component='a' href='https://github.com/jonoman55/' target='_blank'>Visit My GitHub</Text> */}
                         </Navbar.Section>
                     </Navbar>
                 }
@@ -97,11 +86,24 @@ const AppShellDemo: React.FC = () => {
                     <Route path='/table' element={<Table />} />
                     <Route path='/chips' element={<Chips />} />
                     <Route path='/text' element={<TextAndTitle />} />
+                    <Route path='/alerts' element={<Alerts />} />
+                    <Route path='/modals' element={<Modals />} />
                 </Routes>
             </AppShell>
         </Router>
     );
 };
+
+interface NavLinkProps {
+    text: string;
+    to: string;
+};
+
+const NavLink = ({ text, to }: NavLinkProps) => (
+    <Text component={Link} variant='link' to={to} color='cyan'>
+        {text}
+    </Text>
+);
 
 const HomePage: React.FC = () => (
     <div>
@@ -116,13 +118,17 @@ const HomePage: React.FC = () => (
         <Chips />
         <Divider my='lg' />
         <TextAndTitle />
+        <Divider my='lg' />
+        <Alerts />
+        <Divider my='lg' />
+        <Modals />
     </div>
 );
 
 const GitHubButton: React.FC = () => (
     <Button
         component='a'
-        href='https://github.com/jonoman55'
+        href='https://github.com/https://github.com/jonoman55/mantine-ui-app'
         target='_blank'
         leftIcon={<GitHubLogoIcon />}
         variant='gradient'

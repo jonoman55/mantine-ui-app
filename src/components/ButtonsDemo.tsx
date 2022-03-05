@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Box, Button } from '@mantine/core';
+import { Button, Group } from '@mantine/core';
 import { useNotifications } from '@mantine/notifications';
 import { StarIcon, TwitterLogoIcon, GitHubLogoIcon } from '@modulz/radix-icons';
 
@@ -12,7 +12,7 @@ const ButtonsDemo: React.FC = () => {
     };
 
     return (
-        <Box style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly', alignItems: 'center', margin: '1rem', gap: 12 }}>
+        <Group position='center'>
             <Button variant='gradient' gradient={{ from: 'indigo', to: 'cyan' }} leftIcon={<StarIcon />} onClick={handleClick} loading={loading} style={{ width: 141 }}>
                 {!loading ? 'Not Loading' : 'Loading'}
             </Button>
@@ -58,7 +58,7 @@ const ButtonsDemo: React.FC = () => {
             >
                 Show Notification
             </Button>
-        </Box>
+        </Group>
     );
 };
 

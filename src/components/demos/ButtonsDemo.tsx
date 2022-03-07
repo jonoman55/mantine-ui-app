@@ -1,11 +1,12 @@
-import { useState } from 'react';
 import { Button, Group } from '@mantine/core';
 import { useNotifications } from '@mantine/notifications';
 import { StarIcon, TwitterLogoIcon, GitHubLogoIcon } from '@modulz/radix-icons';
 
+import { useAppContext } from '../../context/AppContext';
+
 const ButtonsDemo: React.FC = () => {
     const notifications = useNotifications();
-    const [loading, setLoading] = useState<boolean>(false);
+    const { loading, setLoading } = useAppContext();
 
     const handleClick = () => { 
         setLoading(!loading);

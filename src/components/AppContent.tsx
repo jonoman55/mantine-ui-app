@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { useMantineTheme, AppShell, Burger, Header, MediaQuery, Navbar, Text, Box } from '@mantine/core';
 
@@ -7,12 +6,11 @@ import ThemeSwitch from './ThemeSwitch';
 import GitHubButton from './GitHubButton';
 import MantineLink from './MantineLink';
 import { All, Cards, Codes, Table, Buttons, Chips, TextAndTitle, Alerts, Modals } from './demos';
+import { useAppContext } from '../context/AppContext';
 
-// TODO : Add functionality to close the navbar after clicking an item when in mobile
-// TODO : Add state management for easier control over the props
 const AppContent: React.FC = () => {
     const theme = useMantineTheme();
-    const [opened, setOpened] = useState(false);
+    const { opened, setOpened } = useAppContext();
     return (
         <Router>
             <AppShell

@@ -3,8 +3,10 @@ import { NotificationsProvider } from '@mantine/notifications';
 import { ModalsProvider } from '@mantine/modals';
 import { useLocalStorageValue, useHotkeys } from '@mantine/hooks';
 
-import { Layout } from './components';
+import { Layout as AppContent } from './components';
+import { AppProvider } from './context/AppContext';
 
+// TODO : Implement a ThemeContextProvider
 const App: React.FC = () => {
     const [colorScheme, setColorScheme] = useLocalStorageValue<ColorScheme>({
         key: 'mantine-color-scheme',
@@ -14,15 +16,17 @@ const App: React.FC = () => {
         setColorScheme(value || (colorScheme === 'dark' ? 'light' : 'dark'));
     useHotkeys([['mod+j', () => toggleColorScheme()]]);
     return (
-        <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-            <MantineProvider theme={{ colorScheme }}>
-                <NotificationsProvider autoClose={3000} limit={5}>
-                    <ModalsProvider>
-                        <Layout />
-                    </ModalsProvider>
-                </NotificationsProvider>
-            </MantineProvider>
-        </ColorSchemeProvider >
+        <AppProvider>
+            <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
+                <MantineProvider theme={{ colorScheme }}>
+                    <NotificationsProvider autoClose={3000} limit={5}>
+                        <ModalsProvider>
+                            <AppContent />
+                        </ModalsProvider>
+                    </NotificationsProvider>
+                </MantineProvider>
+            </ColorSchemeProvider>
+        </AppProvider>
     );
 };
 

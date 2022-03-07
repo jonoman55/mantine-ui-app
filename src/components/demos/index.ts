@@ -8,7 +8,6 @@ import ModalsDemo from "./ModalsDemo";
 import TableDemo from "./TableDemo";
 import TextTitleDemo from "./TextTitleDemo";
 
-// TODO : Convert all components to React.FC
 export {
   AllDemo as All,
   AlertsDemo as Alerts,

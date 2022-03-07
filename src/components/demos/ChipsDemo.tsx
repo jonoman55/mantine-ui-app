@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react';
-import { Chips, Chip, Box } from '@mantine/core';
+import { useEffect } from 'react';
+import { Chips, Chip, Group } from '@mantine/core';
 
-// TODO : Add a wrapper component to align the chips
+import { useAppContext } from '../../context/AppContext';
+
 const ChipsDemo: React.FC = () => {
-    // array of strings value when multiple is true
-    const [value, setValue] = useState<string[]>(['react']);
+    const { chips, setChips } = useAppContext();
 
     useEffect(() => {
-        console.log(value);
-    }, [value]);
+        console.log(chips);
+    }, [chips]);
     
     return (
-        <Box style={{ display: 'flex', justifyContent: 'center' }}>
-            <Chips value={value} onChange={setValue} multiple color="red" variant="filled" spacing="lg" size="xl" radius="lg">
+        <Group position='center'>
+            <Chips value={chips} onChange={setChips} multiple color="red" variant="filled" spacing="lg" size="xl" radius="lg">
                 <Chip value="react">React</Chip>
-                <Chip value="ng">Angular</Chip>
+                <Chip value="angular">Angular</Chip>
                 <Chip value="svelte">Svelte</Chip>
                 <Chip value="vue">Vue</Chip>
             </Chips>
-        </Box>
+        </Group>
     );
 };
 

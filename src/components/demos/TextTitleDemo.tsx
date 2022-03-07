@@ -1,7 +1,7 @@
-import { Text, Title } from "@mantine/core";
+import { Box, Text, Title } from "@mantine/core";
 
 const TextTitleDemo: React.FC = () => (
-    <div>
+    <Box m="md">
         <Title order={2}>
             THIS IS A BIG 'OL TITLE
         </Title>
@@ -17,7 +17,7 @@ const TextTitleDemo: React.FC = () => (
             doloribus itaque dolores reiciendis iste aut mollitia velit quam,
             deleniti dolor cum earum! Repellat, deleniti sunt?
         </Text>
-    </div>
+    </Box>
 );
 
 export default TextTitleDemo;

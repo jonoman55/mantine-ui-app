@@ -1,7 +1,7 @@
 import { Button, Group, Text, TextInput } from '@mantine/core';
 import { useModals } from '@mantine/modals';
 
-const ModalsDemo = () => {
+const ModalsDemo: React.FC = () => {
     const modals = useModals();
 
     const openDeleteModal = () =>

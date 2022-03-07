@@ -2,7 +2,7 @@ import { Group, Button, TextInput, ActionIcon } from '@mantine/core';
 import { useNotifications } from '@mantine/notifications';
 import { CheckIcon, EnvelopeClosedIcon, PaperPlaneIcon } from '@modulz/radix-icons';
 
-const AlertsDemo = () => {
+const AlertsDemo: React.FC = () => {
     const notifications = useNotifications();
     return (
         <Group position="center">

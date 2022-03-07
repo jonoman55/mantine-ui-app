@@ -1,8 +1,7 @@
-import { ActionIcon, Box, useMantineTheme } from '@mantine/core';
+import { Box } from '@mantine/core';
 import { Prism } from '@mantine/prism';
-import { SiTypescript, SiPython, SiCss3 } from 'react-icons/si';
 
-import IconWrapper from '../IconWrapper';
+import { CSSIcon, PythonIcon, TypescriptIcon } from '../icons';
 
 const demoCode = 
 `import { Button } from '@mantine/core';
@@ -43,36 +42,20 @@ class SomeClass:
 ... prompt'''
 `;
 
-// TODO : Figure out how to fix the mobile styling for this component
-const CodeDemo = () => {
-    const theme = useMantineTheme();
-    return (
-        <Box m='lg'>
-            <Prism.Tabs>
-                <Prism.Tab withLineNumbers label="styles.css" language="css" icon={
-                    <ActionIcon size='sm' radius='sm' variant='transparent' style={{ color: theme.colors.red[7] }}>
-                        <SiCss3 />
-                    </ActionIcon>
-                }>
-                    {cssCode}
-                </Prism.Tab>
-                <Prism.Tab withLineNumbers label="decorator.py" language="python" icon={
-                    <IconWrapper size='sm' color='yellow' radius='sm' variant='transparent'>
-                        <SiPython fontSize='small' />
-                    </IconWrapper>
-                }>
-                    {pythonCode}
-                </Prism.Tab>
-                <Prism.Tab withLineNumbers label="component.tsx" language="tsx" icon={
-                    <IconWrapper size='sm' color='blue' radius='sm' variant='transparent'>
-                        <SiTypescript fontSize='small' />
-                    </IconWrapper>
-                }>
-                    {demoCode}
-                </Prism.Tab>
-            </Prism.Tabs>
-        </Box>
-    );
-};
+const CodeDemo: React.FC = () => (
+    <Box>
+        <Prism.Tabs>
+            <Prism.Tab withLineNumbers label="styles.css" language="css" copyLabel="Copy code to clipboard" copiedLabel="Code copied to clipboard" icon={<CSSIcon />}>
+                {cssCode}
+            </Prism.Tab>
+            <Prism.Tab withLineNumbers label="decorator.py" language="python" copyLabel="Copy code to clipboard" copiedLabel="Code copied to clipboard" icon={<PythonIcon />}>
+                {pythonCode}
+            </Prism.Tab>
+            <Prism.Tab withLineNumbers label="component.tsx" language="tsx" copyLabel="Copy code to clipboard" copiedLabel="Code copied to clipboard" icon={<TypescriptIcon />}>
+                {demoCode}
+            </Prism.Tab>
+        </Prism.Tabs>
+    </Box>
+);
 
 export default CodeDemo;

@@ -8,7 +8,7 @@ const elements = [
     { position: 58, mass: 140.12, symbol: 'Ce', name: 'Cerium' },
 ];
 
-function TableDemo() {
+const TableDemo: React.FC = () => {
     const rows = elements.map((element) => (
         <tr key={element.name}>
             <td>{element.position}</td>

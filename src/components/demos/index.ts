@@ -7,6 +7,8 @@ import CodeDemo from "./CodeDemo";
 import ModalsDemo from "./ModalsDemo";
 import TableDemo from "./TableDemo";
 import TextTitleDemo from "./TextTitleDemo";
+import InputsDemo from "./InputsDemo";
+import CalendarsDemo from "./CalendarsDemo";
 
 export {
   AllDemo as All,
@@ -17,5 +19,7 @@ export {
   ChipsDemo as Chips,
   ModalsDemo as Modals,
   TableDemo as Table,
-  TextTitleDemo as TextAndTitle
+  TextTitleDemo as TextAndTitle,
+  InputsDemo as Inputs,
+  CalendarsDemo as Calendars
 };

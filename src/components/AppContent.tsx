@@ -5,7 +5,7 @@ import NavLink from './NavLink';
 import ThemeSwitch from './ThemeSwitch';
 import GitHubButton from './GitHubButton';
 import MantineLink from './MantineLink';
-import { All, Cards, Codes, Table, Buttons, Chips, TextAndTitle, Alerts, Modals } from './demos';
+import { All, Cards, Codes, Table, Buttons, Chips, TextAndTitle, Alerts, Modals, Inputs, Calendars } from './demos';
 import { useAppContext } from '../context/AppContext';
 
 const AppContent: React.FC = () => {
@@ -43,6 +43,8 @@ const AppContent: React.FC = () => {
                             <NavLink text='Text' to='/text' />
                             <NavLink text='Alerts' to='/alerts' />
                             <NavLink text='Modals' to='/modals' />
+                            <NavLink text='Inputs' to='/inputs' />
+                            <NavLink text='Calendars' to='/calendars' />
                         </Navbar.Section>
                         <Navbar.Section>
                             <GitHubButton />
@@ -79,6 +81,8 @@ const AppContent: React.FC = () => {
                     <Route path='/text' element={<TextAndTitle />} />
                     <Route path='/alerts' element={<Alerts />} />
                     <Route path='/modals' element={<Modals />} />
+                    <Route path='/inputs' element={<Inputs />} />
+                    <Route path='/calendars' element={<Calendars />} />
                 </Routes>
             </AppShell>
         </Router>

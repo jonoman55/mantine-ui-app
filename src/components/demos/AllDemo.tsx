@@ -1,6 +1,6 @@
 import { Box, Divider } from '@mantine/core';
 
-import { Cards, Codes, Table, Buttons, Chips, TextAndTitle, Alerts, Modals } from '.';
+import { Cards, Codes, Table, Buttons, Chips, TextAndTitle, Alerts, Modals, Inputs, Calendars } from '.';
 
 const AllDemo: React.FC = () => (
     <Box>
@@ -19,6 +19,10 @@ const AllDemo: React.FC = () => (
         <Alerts />
         <Divider my='lg' />
         <Modals />
+        <Divider my='lg' />
+        <Inputs />
+        <Divider my='lg' />
+        <Calendars />
     </Box>
 );
 

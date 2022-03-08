@@ -11,7 +11,7 @@ const InputsDemo: React.FC = () => (
             error="You've Bloody Errored!"
             required
         />
-        <Input component="select" rightSection={<ChevronDownIcon />}>
+        <Input component="select" mt="md" rightSection={<ChevronDownIcon />}>
             <option value="1">1</option>
             <option value="2">2</option>
         </Input>

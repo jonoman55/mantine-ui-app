@@ -1,11 +1,11 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router } from 'react-router-dom';
 import { useMantineTheme, AppShell, Burger, Header, MediaQuery, Navbar, Text, Box } from '@mantine/core';
 
+import Routes from '../routes';
 import NavLink from './NavLink';
 import ThemeSwitch from './ThemeSwitch';
 import GitHubButton from './GitHubButton';
 import MantineLink from './MantineLink';
-import { All, Cards, Codes, Table, Buttons, Chips, TextAndTitle, Alerts, Modals, Inputs, Calendars } from './demos';
 import { useAppContext } from '../context/AppContext';
 
 const AppContent: React.FC = () => {
@@ -33,7 +33,10 @@ const AppContent: React.FC = () => {
                         <Navbar.Section>
                             <Text>Navbar</Text>
                         </Navbar.Section>
-                        <Navbar.Section grow mt='lg' style={{ display: 'flex', flexDirection: 'column' }}>
+                        <Navbar.Section grow mt='lg' style={{
+                            display: 'flex', flexDirection: 'column', flexWrap: 'nowrap',
+                            justifyContent: 'flex-start', alignItems: 'flex-start'
+                        }}>
                             <NavLink text='All' to='/' />
                             <NavLink text='Cards' to='/cards' />
                             <NavLink text='Buttons' to='/buttons' />
@@ -45,6 +48,7 @@ const AppContent: React.FC = () => {
                             <NavLink text='Modals' to='/modals' />
                             <NavLink text='Inputs' to='/inputs' />
                             <NavLink text='Calendars' to='/calendars' />
+                            <NavLink text='TimeInputs' to='/time' />
                         </Navbar.Section>
                         <Navbar.Section>
                             <GitHubButton />
@@ -71,19 +75,7 @@ const AppContent: React.FC = () => {
                 }
             >
                 {/* AppShell content */}
-                <Routes>
-                    <Route path='/' element={<All />} />
-                    <Route path='/cards' element={<Cards />} />
-                    <Route path='/buttons' element={<Buttons />} />
-                    <Route path='/code' element={<Codes />} />
-                    <Route path='/table' element={<Table />} />
-                    <Route path='/chips' element={<Chips />} />
-                    <Route path='/text' element={<TextAndTitle />} />
-                    <Route path='/alerts' element={<Alerts />} />
-                    <Route path='/modals' element={<Modals />} />
-                    <Route path='/inputs' element={<Inputs />} />
-                    <Route path='/calendars' element={<Calendars />} />
-                </Routes>
+                <Routes />
             </AppShell>
         </Router>
     );

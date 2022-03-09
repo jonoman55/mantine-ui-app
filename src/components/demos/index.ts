@@ -9,6 +9,7 @@ import TableDemo from "./TableDemo";
 import TextTitleDemo from "./TextTitleDemo";
 import InputsDemo from "./InputsDemo";
 import CalendarsDemo from "./CalendarsDemo";
+import TimeInputsDemo from "./TimeInputsDemo";
 
 export {
   AllDemo as All,
@@ -21,5 +22,6 @@ export {
   TableDemo as Table,
   TextTitleDemo as TextAndTitle,
   InputsDemo as Inputs,
-  CalendarsDemo as Calendars
+  CalendarsDemo as Calendars,
+  TimeInputsDemo as TimeInputs
 };

@@ -33,11 +33,9 @@ const AlertsDemo: React.FC = () => {
             >
                 Show 10 notifications
             </Button>
-
             <Button variant="outline" color="gray" onClick={() => notifications.cleanQueue()}>
                 Clean queue
             </Button>
-
             <Button variant="outline" color="red" onClick={() => notifications.clean()}>
                 Clean all
             </Button>
@@ -51,7 +49,6 @@ const AlertsDemo: React.FC = () => {
                         autoClose: false,
                         disallowClose: true,
                     });
-
                     setTimeout(() => {
                         notifications.updateNotification(id, {
                             id,
@@ -72,13 +69,11 @@ const AlertsDemo: React.FC = () => {
             }>
                 Notifications Provider timeout
             </Button>
-
             <Button variant="outline" onClick={() =>
                 notifications.showNotification({ autoClose: 500, message: 'I will close in 500ms' })
             }>
                 Closes in 500ms
             </Button>
-
             <Button variant="outline" onClick={() =>
                 notifications.showNotification({
                     color: 'blue',

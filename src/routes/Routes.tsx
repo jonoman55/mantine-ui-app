@@ -1,5 +1,5 @@
 import { Routes as Switch, Route } from 'react-router-dom';
-import { All, Cards, Codes, Table, Buttons, Chips, TextAndTitle, Alerts, Modals, Inputs, Calendars, TimeInputs } from '../components/demos';
+import { All, Cards, Codes, Table, Buttons, Chips, TextAndTitle, Alerts, Modals, Inputs, Calendars, TimeInputs, Notifications } from '../components/demos';
 
 const Routes = () => (
     <Switch>
@@ -15,6 +15,7 @@ const Routes = () => (
         <Route path='/inputs' element={<Inputs />} />
         <Route path='/calendars' element={<Calendars />} />
         <Route path='/time' element={<TimeInputs />} />
+        <Route path='/notifications' element={<Notifications />} />
     </Switch>
 );
 

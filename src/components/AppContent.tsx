@@ -49,6 +49,7 @@ const AppContent: React.FC = () => {
                             <NavLink text='Inputs' to='/inputs' />
                             <NavLink text='Calendars' to='/calendars' />
                             <NavLink text='TimeInputs' to='/time' />
+                            <NavLink text='Notifications' to='/notifications' />
                         </Navbar.Section>
                         <Navbar.Section>
                             <GitHubButton />

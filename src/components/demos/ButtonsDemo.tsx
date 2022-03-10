@@ -2,7 +2,7 @@ import { Button, Group } from '@mantine/core';
 import { useNotifications } from '@mantine/notifications';
 import { StarIcon, TwitterLogoIcon, GitHubLogoIcon } from '@modulz/radix-icons';
 
-import { useAppContext } from '../../context/AppContext';
+import { useAppContext } from '../../contexts/AppContext';
 
 const ButtonsDemo: React.FC = () => {
     const notifications = useNotifications();

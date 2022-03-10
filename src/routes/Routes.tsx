@@ -15,7 +15,7 @@ const Routes = () => (
         <Route path='/inputs' element={<Inputs />} />
         <Route path='/calendars' element={<Calendars />} />
         <Route path='/time' element={<TimeInputs />} />
-        <Route path='/notifications' element={<Notifications />} />
+        <Route path='/random' element={<Notifications />} />
     </Switch>
 );
 

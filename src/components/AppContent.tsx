@@ -6,7 +6,7 @@ import NavLink from './NavLink';
 import ThemeSwitch from './ThemeSwitch';
 import GitHubButton from './GitHubButton';
 import MantineLink from './MantineLink';
-import { useAppContext } from '../context/AppContext';
+import { useAppContext } from '../contexts/AppContext';
 
 const AppContent: React.FC = () => {
     const theme = useMantineTheme();
@@ -31,7 +31,7 @@ const AppContent: React.FC = () => {
                         width={{ sm: 300, lg: 400 }}
                     >
                         <Navbar.Section>
-                            <Text>Navbar</Text>
+                            <Text>Demos</Text>
                         </Navbar.Section>
                         <Navbar.Section grow mt='lg' style={{
                             display: 'flex', flexDirection: 'column', flexWrap: 'nowrap',
@@ -49,7 +49,7 @@ const AppContent: React.FC = () => {
                             <NavLink text='Inputs' to='/inputs' />
                             <NavLink text='Calendars' to='/calendars' />
                             <NavLink text='TimeInputs' to='/time' />
-                            <NavLink text='Notifications' to='/notifications' />
+                            <NavLink text='Random' to='/random' />
                         </Navbar.Section>
                         <Navbar.Section>
                             <GitHubButton />

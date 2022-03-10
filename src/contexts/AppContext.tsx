@@ -5,8 +5,15 @@ type Props = {
     children: ReactNode;
 };
 
+interface Player {
+    first_name: string;
+    last_name: string;
+};
+
 interface IAppContext {
-    loading: boolean,
+    randomPlayer: Player | undefined;
+    setRandomPlayer: React.Dispatch<React.SetStateAction<Player>>;
+    loading: boolean;
     setLoading: React.Dispatch<React.SetStateAction<boolean>>;
     opened: boolean;
     setOpened: React.Dispatch<React.SetStateAction<boolean>>;
@@ -38,21 +45,33 @@ const initalState: IAppContext = {
     rangeValue: undefined,
     setRangeValue: function (value: SetStateAction<[Date, Date]>): void {
         throw new Error('Function not implemented.');
+    },
+    randomPlayer: undefined,
+    setRandomPlayer: function (value: SetStateAction<Player>): void {
+        throw new Error('Function not implemented.');
     }
 };
 
 const AppContext = createContext<IAppContext>(initalState);
 
+const initialPlayerState: Player = {
+    first_name: "",
+    last_name: "",
+};
+
 function AppProvider({ children }: Props) {
-    const [opened, setOpened] = useState(false);
-    const [loading, setLoading] = useState(false);
-    const [chips, setChips] = useState(['react']);
-    const [timeValue, setTimeValue] = useState(new Date());
     const now = new Date();
     const then = dayjs(now).add(30, 'minutes').toDate();
     const [rangeValue, setRangeValue] = useState<[Date, Date]>([now, then]);
+    const [randomPlayer, setRandomPlayer] = useState<Player>(initialPlayerState);
+    const [timeValue, setTimeValue] = useState(new Date());
+    const [opened, setOpened] = useState(false);
+    const [loading, setLoading] = useState(false);
+    const [chips, setChips] = useState(['react']);
 
     const values = {
+        randomPlayer,
+        setRandomPlayer,
         timeValue,
         setTimeValue,
         rangeValue,

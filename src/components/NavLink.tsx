@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { Text } from '@mantine/core';
 
-import { useAppContext } from '../context/AppContext';
+import { useAppContext } from '../contexts/AppContext';
 
 interface NavLinkProps {
     text: string;

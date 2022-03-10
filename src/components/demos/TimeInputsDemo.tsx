@@ -3,7 +3,7 @@ import { Box, Container, Group, Text } from "@mantine/core";
 import { TimeInput, TimeRangeInput  } from "@mantine/dates";
 import { ClockIcon, GitHubLogoIcon } from '@modulz/radix-icons';
 
-import { useAppContext } from '../../context/AppContext';
+import { useAppContext } from '../../contexts/AppContext';
 
 const TimeRangeInputDemo: React.FC = () => {
     const { rangeValue, setRangeValue } = useAppContext();

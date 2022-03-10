@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Chips, Chip, Group } from '@mantine/core';
 
-import { useAppContext } from '../../context/AppContext';
+import { useAppContext } from '../../contexts/AppContext';
 
 const ChipsDemo: React.FC = () => {
     const { chips, setChips } = useAppContext();

@@ -19,7 +19,7 @@ const NotificationsDemo: React.FC = () => {
     const { randomPlayer, setRandomPlayer } = useAppContext();
 
     const getPlayerName = useCallback(() => {
-        axios.get(`http://www.balldontlie.io/api/v1/players/${randomNumber(1, 300)}`).then(res => {
+        axios.get(`https://www.balldontlie.io/api/v1/players/${randomNumber(1, 300)}`).then(res => {
             setRandomPlayer(res.data);
             notifications.showNotification({
                 message: "WE GOT YA DATA!",
